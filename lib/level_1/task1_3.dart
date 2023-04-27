@@ -26,6 +26,7 @@ class _Task1_3State extends State<Task1_3> {
               onPressed: () {
                 try {
                   setState(() {
+                    //binh phuong
                     result =
                         int.parse(controller.text) * int.parse(controller.text);
                   });

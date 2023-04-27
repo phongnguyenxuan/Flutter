@@ -25,6 +25,7 @@ class _Task2_2State extends State<Task2_2> {
           TextFormField(
             controller: controller,
             onFieldSubmitted: (value) {
+              // tu dai nhat trong mang
               words = controller.text.split(',');
               int longestString = words[0].length;
               for (int i = 0; i < words.length; i++) {

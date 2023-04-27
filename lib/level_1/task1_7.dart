@@ -23,6 +23,7 @@ class _Task1_7State extends State<Task1_7> {
             controller: controller,
             onFieldSubmitted: (value) {
               listString = controller.text.split(',');
+              //sorts the list in alphabetical order
               listString.sort();
               setState(() {
                 result = listString.toString();

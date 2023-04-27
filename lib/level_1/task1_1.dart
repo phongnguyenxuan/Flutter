@@ -39,6 +39,7 @@ class _Task1_1State extends State<Task1_1> {
               child: ElevatedButton(
                   onPressed: () {
                     setState(() {
+                      //tinh tong hai so
                       result = int.parse(number1Input.text) +
                           int.parse(number2Input.text);
                     });

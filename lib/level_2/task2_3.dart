@@ -15,6 +15,54 @@ class _Task2_3State extends State<Task2_3> {
   late String result = '';
   //
 
+  void longest_Common(String a, String b) {
+    // luu do dai xau con chung dai nhat
+    String subsequence = "";
+    int n = a.length;
+    int m = b.length;
+    // Mang luu ket qua
+    var L = List.generate(
+        n + 1, (i) => List.generate(m + 1, (j) => 0, growable: false),
+        growable: false);
+
+    for (int i = 1; i <= n; i++) {
+      for (int j = 1; j <= m; j++) {
+        if (a[i - 1] == b[j - 1]) {
+          // Nếu có phần tử bằng nhau
+          L[i][j] = L[i - 1][j - 1] + 1; // Áp dụng công thức
+        } else {
+          // Trường hợp a[i-1] khác b[j-1]
+          if (L[i - 1][j] >= L[i][j - 1]) {
+            L[i][j] = L[i - 1][j];
+          } else {
+            L[i][j] = L[i][j - 1];
+          }
+        }
+      }
+    }
+    int i = n;
+    int j = m;
+    while (L[i][j] != 0) {
+      // Điều kiện dừng
+      if (a[i - 1] == b[j - 1]) {
+        // Nếu bằng nhau
+        subsequence += a[i - 1]; // Cộng a[i-1] vào xâu con
+        i--;
+        j--;
+      } else {
+        // Nếu khác nhau
+        if (L[i - 1][j] >= L[i][j - 1]) {
+          i--;
+        } else {
+          j--;
+        }
+      }
+    }
+    setState(() {
+      result = subsequence;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,14 +84,12 @@ class _Task2_3State extends State<Task2_3> {
             padding: const EdgeInsets.all(20),
             child: ElevatedButton(
               onPressed: () {
-                words1 = input1Controller.text.split('');
-                words2 = input2Controller.text.split('');
-                String subsequence = "";
+                longest_Common(input1Controller.text, input2Controller.text);
               },
               child: Text('Check'),
             ),
           ),
-          Text('result: ')
+          Text('result: $result')
         ],
       ),
     );

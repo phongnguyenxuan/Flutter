@@ -81,7 +81,6 @@ class _Task1_8State extends State<Task1_8> {
                         //sap xep tang dan
                         numbers.sort();
                         //so trung vi
-
                         for (int i = 0; i <= numbers.length; i++) {
                           if (numbers.length % 2 == 0) {
                             int a = numbers
@@ -91,7 +90,6 @@ class _Task1_8State extends State<Task1_8> {
                             setState(() {
                               result = ((a + b) / 2).toString();
                             });
-                            print(result);
                           } else {
                             int c = numbers
                                 .elementAt((numbers.length - 1) / 2 as int);

@@ -24,6 +24,7 @@ class _Task1_2State extends State<Task1_2> {
             controller: controller,
             onChanged: (value) {
               setState(() {
+                //do dai 1 chuoi
                 length = controller.text.length;
               });
             },

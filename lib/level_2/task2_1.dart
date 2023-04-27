@@ -32,6 +32,7 @@ class _Task2_1State extends State<Task2_1> {
               //sap xep mang tang dan
               numbers.sort();
               setState(() {
+                //so lon thu 2 trong mang
                 result = numbers
                     .lastWhere((element) => element < numbers.last)
                     .toString();

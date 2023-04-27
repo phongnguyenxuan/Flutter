@@ -9,9 +9,12 @@ class Task1_4 extends StatefulWidget {
 
 class _Task1_4State extends State<Task1_4> {
   TextEditingController length = TextEditingController();
-  List<TextEditingController> _controller = [];
+  final List<TextEditingController> _controller = [];
+  //nhap mang
   inputList(int length) {
-    for (int i = 0; i < length; i++) _controller.add(TextEditingController());
+    for (int i = 0; i < length; i++) {
+      _controller.add(TextEditingController());
+    }
   }
 
   late int max = 0;
@@ -73,6 +76,7 @@ class _Task1_4State extends State<Task1_4> {
                   children: [
                     ElevatedButton(
                         onPressed: () {
+                          //tim max trong mang
                           max = int.parse(_controller[0].text);
                           for (int i = 0; i < _controller.length; i++) {
                             int number = int.parse(_controller[i].text);
