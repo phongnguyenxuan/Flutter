@@ -15,6 +15,7 @@ import 'package:my_project/level_2/task2_4.dart';
 import 'package:my_project/level_2/task2_5.dart';
 
 import 'level_1/task1_5.dart';
+import 'level_3/task3_1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,6 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
     const Task2_4(),
     const Task2_5(),
   ];
+  List<Widget> listTaskLevel3 = [
+    const Task3_1(),
+  ];
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -90,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: TabBarView(children: [
           _level_1(),
           _level_2(),
-          _level_1(),
+          _level_3(),
           _level_1(),
         ]),
       ),
@@ -133,6 +137,27 @@ class _MyHomePageState extends State<MyHomePage> {
                   ));
             },
             child: Text('Task 2_${index + 1}'),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _level_3() {
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: listTaskLevel3.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => listTaskLevel3[index],
+                  ));
+            },
+            child: Text('Task 3_${index + 1}'),
           ),
         );
       },
