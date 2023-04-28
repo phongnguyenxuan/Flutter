@@ -45,16 +45,10 @@ class _Task3_3State extends State<Task3_3> {
   }
 
   int lis(List<int> arr, int n) {
+    //list chuỗi con tịnh tiến dài nhất
     List<int> _arr = List.generate(n, (index) => 1);
     int i, j, max = 0;
 
-    // // khởi tạo giá trị cho các phần tử của list chứa  LIS values for all indexes
-    // for (i = 0; i < n; i++) {
-    //   _arr[i] = 1;
-    // }
-
-    // Compute optimized LIS values in
-    // bottom up manner
     for (i = 1; i < n; i++) {
       for (j = 0; j < i; j++) {
         if (arr[i] > arr[j] && _arr[i] < _arr[j] + 1) {
@@ -63,7 +57,7 @@ class _Task3_3State extends State<Task3_3> {
       }
     }
 
-    // Pick maximum of all LIS values
+    // lấy độ dài của chuỗi con tịnh tiến lớn nhất
     for (i = 0; i < n; i++) {
       if (max < _arr[i]) max = _arr[i];
     }
