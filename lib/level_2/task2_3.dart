@@ -16,50 +16,61 @@ class _Task2_3State extends State<Task2_3> {
   //
 
   void longest_Common(String a, String b) {
-    // luu do dai xau con chung dai nhat
-    String subsequence = "";
+//can bang do dai 2 chuoi
+    if (a.length < b.length) {
+      for (int i = 0; i <= b.length; i++) {
+        a += ' ';
+        if (a.length == b.length) {
+          break;
+        }
+      }
+    } else {
+      for (int i = 0; i <= a.length; i++) {
+        b += ' ';
+        if (a.length == b.length) {
+          break;
+        }
+      }
+    }
     int n = a.length;
     int m = b.length;
     // Mang luu ket qua
-    var L = List.generate(
+    var arr = List.generate(
         n + 1, (i) => List.generate(m + 1, (j) => 0, growable: false),
         growable: false);
-
+    //
+    for (int j = 0; j <= m; j++) {
+      arr[0][j] = 0;
+    }
+    for (int i = 0; i <= n; i++) {
+      arr[i][0] = 0;
+    }
+    int _result = 0;
+    int col = 0;
+    int row = 0;
     for (int i = 1; i <= n; i++) {
       for (int j = 1; j <= m; j++) {
-        if (a[i - 1] == b[j - 1]) {
-          // Nếu có phần tử bằng nhau
-          L[i][j] = L[i - 1][j - 1] + 1; // Áp dụng công thức
+        if (a.characters.elementAt(j - 1) == b.characters.elementAt(i - 1)) {
+          arr[i][j] = arr[i - 1][j - 1] + 1;
         } else {
-          // Trường hợp a[i-1] khác b[j-1]
-          if (L[i - 1][j] >= L[i][j - 1]) {
-            L[i][j] = L[i - 1][j];
-          } else {
-            L[i][j] = L[i][j - 1];
-          }
+          arr[i][j] = 0;
+        }
+        if (arr[i][j] > _result) {
+          _result = arr[i][j];
+          col = j;
+          row = i;
         }
       }
     }
-    int i = n;
-    int j = m;
-    while (L[i][j] != 0) {
-      // Điều kiện dừng
-      if (a[i - 1] == b[j - 1]) {
-        // Nếu bằng nhau
-        subsequence += a[i - 1]; // Cộng a[i-1] vào xâu con
-        i--;
-        j--;
-      } else {
-        // Nếu khác nhau
-        if (L[i - 1][j] >= L[i][j - 1]) {
-          i--;
-        } else {
-          j--;
-        }
-      }
+    var res = '';
+    while (arr[row][col] > 0) {
+      res = a[col - 1] + res;
+      row -= 1;
+      col -= 1;
     }
+    print(res);
     setState(() {
-      result = subsequence;
+      result = res;
     });
   }
 

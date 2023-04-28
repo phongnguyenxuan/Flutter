@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "mảng"
-    ]
+    ],
+    "cmake.configureOnOpen": false
 }
