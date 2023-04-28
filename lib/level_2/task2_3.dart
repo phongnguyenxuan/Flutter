@@ -68,9 +68,8 @@ class _Task2_3State extends State<Task2_3> {
       row -= 1;
       col -= 1;
     }
-    print(res);
     setState(() {
-      result = res;
+      result = res.trim();
     });
   }
 
