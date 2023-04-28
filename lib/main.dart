@@ -14,6 +14,7 @@ import 'package:my_project/level_2/task2_3.dart';
 import 'package:my_project/level_2/task2_4.dart';
 import 'package:my_project/level_2/task2_5.dart';
 import 'package:my_project/level_3/task3_2.dart';
+import 'package:my_project/level_3/task3_3.dart';
 
 import 'level_1/task1_5.dart';
 import 'level_3/task3_1.dart';
@@ -67,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> listTaskLevel3 = [
     const Task3_1(),
     const Task3_2(),
+    const Task3_3(),
   ];
   @override
   Widget build(BuildContext context) {
