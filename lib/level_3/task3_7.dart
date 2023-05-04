@@ -40,21 +40,14 @@ class _Task3_7State extends State<Task3_7> {
   }
 
   int longestPalSubstr(String str) {
-    // get length of input string
     int n = str.length;
-
-    // table[i][j] will be false if
-    // substring str[i..j] is not palindrome.
-    // Else table[i][j] will be true
     var table = List.generate(
         n, (i) => List.generate(n, (j) => false, growable: false),
         growable: false);
 
-    // All substrings of length 1 are palindromes
     int maxLength = 1;
     for (int i = 0; i < n; ++i) table[i][i] = true;
 
-    // check for sub-string of length 2.
     int start = 0;
     for (int i = 0; i < n - 1; ++i) {
       if (str.characters.elementAt(i) == str.characters.elementAt(i + 1)) {
@@ -64,18 +57,9 @@ class _Task3_7State extends State<Task3_7> {
       }
     }
 
-    // Check for lengths greater than 2.
-    // k is length of substring
     for (int k = 3; k <= n; ++k) {
-      // Fix the starting index
       for (int i = 0; i < n - k + 1; ++i) {
-        // Get the ending index of substring from
-        // starting index i and length k
         int j = i + k - 1;
-
-        // checking for sub-string from ith index to
-        // jth index if str.charAt(i+1) to
-        // str.charAt(j-1) is a palindrome
         if (table[i + 1][j - 1] &&
             str.characters.elementAt(i) == str.characters.elementAt(j)) {
           table[i][j] = true;
