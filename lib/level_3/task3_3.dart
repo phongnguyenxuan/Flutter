@@ -24,7 +24,6 @@ class _Task3_3State extends State<Task3_3> {
         children: [
           TextFormField(
             controller: controller,
-            keyboardType: TextInputType.number,
             onFieldSubmitted: (value) {
               numbers =
                   controller.text.split(',').map((e) => int.parse(e)).toList();
