@@ -15,6 +15,7 @@ class _Task2_3State extends State<Task2_3> {
   late String result = '';
   //
 
+  // ignore: non_constant_identifier_names
   void longest_Common(String a, String b) {
 //can bang do dai 2 chuoi
     if (a.length < b.length) {
@@ -24,7 +25,7 @@ class _Task2_3State extends State<Task2_3> {
           break;
         }
       }
-    } else {
+    } else if (a.length > b.length) {
       for (int i = 0; i <= a.length; i++) {
         b += ' ';
         if (a.length == b.length) {
