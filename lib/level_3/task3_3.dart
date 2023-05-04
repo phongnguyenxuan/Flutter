@@ -32,8 +32,8 @@ class _Task3_3State extends State<Task3_3> {
                 result = lis(numbers, numbers.length).toString();
               });
             },
-            decoration: const InputDecoration(
-                hintText: 'nhập các số cách nhau bởi dấu ,'),
+            decoration:
+                const InputDecoration(hintText: 'nhập cách nhau bởi dấu ,'),
           ),
           Padding(
             padding: const EdgeInsets.all(20),
