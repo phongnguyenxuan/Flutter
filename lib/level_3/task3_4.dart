@@ -26,7 +26,6 @@ class _Task3_4State extends State<Task3_4> {
         children: [
           TextFormField(
             controller: controller,
-            keyboardType: TextInputType.number,
             onFieldSubmitted: (value) {
               words = controller.text.split(',');
               List<String> maxOverlap = findLargestOverlap(words);
