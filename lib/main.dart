@@ -13,9 +13,13 @@ import 'package:my_project/level_2/task2_2.dart';
 import 'package:my_project/level_2/task2_3.dart';
 import 'package:my_project/level_2/task2_4.dart';
 import 'package:my_project/level_2/task2_5.dart';
+import 'package:my_project/level_3/task3_10.dart';
 import 'package:my_project/level_3/task3_2.dart';
 import 'package:my_project/level_3/task3_3.dart';
 import 'package:my_project/level_3/task3_4.dart';
+import 'package:my_project/level_3/task3_5.dart';
+import 'package:my_project/level_3/task3_6.dart';
+import 'package:my_project/level_3/task3_7.dart';
 
 import 'level_1/task1_5.dart';
 import 'level_3/task3_1.dart';
@@ -71,6 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
     const Task3_2(),
     const Task3_3(),
     const Task3_4(),
+    const Task3_5(),
+    const Task3_6(),
+    const Task3_7(),
+    const Task3_10(),
   ];
   @override
   Widget build(BuildContext context) {
