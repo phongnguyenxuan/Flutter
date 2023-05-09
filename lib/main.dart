@@ -28,6 +28,7 @@ import 'package:my_project/level_4/task4_7.dart';
 import 'level_1/task1_5.dart';
 import 'level_3/task3_1.dart';
 import 'level_4/task4_6.dart';
+import 'level_5/task5_1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -93,10 +94,13 @@ class _MyHomePageState extends State<MyHomePage> {
     const Task4_7(),
     const Task4_10()
   ];
+  List<Widget> listTaskLevel5 = [
+    const Task5_1(),
+  ];
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
@@ -115,6 +119,9 @@ class _MyHomePageState extends State<MyHomePage> {
               Tab(
                 text: 'Level 4',
               ),
+              Tab(
+                text: 'Level 5',
+              ),
             ],
           ),
         ),
@@ -123,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _level_2(),
           _level_3(),
           _level_4(),
+          _level_5()
         ]),
       ),
     );
@@ -206,6 +214,27 @@ class _MyHomePageState extends State<MyHomePage> {
                   ));
             },
             child: Text('Task 4_${index + 1}'),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _level_5() {
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: listTaskLevel5.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => listTaskLevel5[index],
+                  ));
+            },
+            child: Text('Task 5_${index + 1}'),
           ),
         );
       },
