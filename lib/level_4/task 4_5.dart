@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Task4_5 extends StatefulWidget {
-  const Task4_5({super.key});
+class Task4_6 extends StatefulWidget {
+  const Task4_6({super.key});
 
   @override
-  State<Task4_5> createState() => _Task4_5State();
+  State<Task4_6> createState() => _Task4_6State();
 }
 
-class _Task4_5State extends State<Task4_5> {
+class _Task4_6State extends State<Task4_6> {
   TextEditingController controller = TextEditingController();
   List<int> numbers = [];
   late String result = '';
@@ -15,7 +15,7 @@ class _Task4_5State extends State<Task4_5> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Task 4_5'),
+        title: const Text('Task 4_6'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
