@@ -32,7 +32,7 @@ class _Task3_7State extends State<Task3_7> {
               )),
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Text('$result'),
+            child: Text('Kết quả: $result'),
           )
         ],
       ),
@@ -46,13 +46,14 @@ class _Task3_7State extends State<Task3_7> {
         growable: false);
 
     int maxLength = 1;
-    for (int i = 0; i < n; ++i) table[i][i] = true;
+    for (int i = 0; i < n; ++i) {
+      table[i][i] = true;
+    }
 
-    int start = 0;
+
     for (int i = 0; i < n - 1; ++i) {
       if (str.characters.elementAt(i) == str.characters.elementAt(i + 1)) {
         table[i][i + 1] = true;
-        start = i;
         maxLength = 2;
       }
     }
@@ -65,7 +66,6 @@ class _Task3_7State extends State<Task3_7> {
           table[i][j] = true;
 
           if (k > maxLength) {
-            start = i;
             maxLength = k;
           }
         }
